@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#8b5e34"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <title>Nouvelle commande</title>
+
+</head>
+
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        🪚 Gestion Menuiserie
+    </div>
+
+    <a
+        href="dashboard.html"
+        class="header-link"
+    >
+        ← Retour
+    </a>
+
+</header>
+
+
+<main class="form-container">
+
+    <div class="form-card">
+
+        <h1>
+            Nouvelle commande
+        </h1>
+
+        <p class="form-description">
+            Tous les champs sont obligatoires.
+        </p>
+
+
+        <form id="formCommande">
+
+
+            <div class="form-group">
+
+                <label for="client">
+                    Client *
+                </label>
+
+                <input
+                    type="text"
+                    id="client"
+                    placeholder="Ex : Ahmed"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="projet">
+                    Projet *
+                </label>
+
+                <input
+                    type="text"
+                    id="projet"
+                    placeholder="Ex : Cuisine MDF"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="description">
+                    Description *
+                </label>
+
+                <textarea
+                    id="description"
+                    rows="4"
+                    placeholder="Ex : 280 × 220 cm"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-row">
+
+
+                <div class="form-group">
+
+                    <label for="prix">
+                        Prix (DH) *
+                    </label>
+
+                    <input
+                        type="number"
+                        id="prix"
+                        min="0"
+                        step="0.01"
+                        placeholder="15000"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="avance">
+                        Avance (DH) *
+                    </label>
+
+                    <input
+                        type="number"
+                        id="avance"
+                        min="0"
+                        step="0.01"
+                        placeholder="5000"
+                        required
+                    >
+
+                </div>
+
+
+            </div>
+
+
+            <div class="reste-preview">
+
+                Reste :
+
+                <strong id="reste">
+                    0 DH
+                </strong>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="livraison">
+                    Date de livraison *
+                </label>
+
+                <input
+                    type="date"
+                    id="livraison"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <a
+                    href="dashboard.html"
+                    class="btn btn-light"
+                >
+                    Annuler
+                </a>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="btnEnregistrer"
+                >
+                    💾 Enregistrer
+                </button>
+
+            </div>
+
+
+            <div
+                id="message"
+                class="message"
+            ></div>
+
+
+        </form>
+
+    </div>
+
+</main>
+
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+<script src="js/config.js"></script>
+
+<script src="js/ajouter-commande.js"></script>
+
+</body>
+
+</html>
